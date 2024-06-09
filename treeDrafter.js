@@ -27,17 +27,8 @@
   planeContext.strokeStyle = "green"
   planeContext.lineWidth = currentRadius
 
-
-
-  //Para que empieze desde la parte mas alta del tronco.
-  //initailPoint.y = initailPoint.y - currentLarge
-
   dfsBtn.addEventListener('click', () => {
-    //console.log('Trazando en profundidad')
-
     resetVariables()
-    //calculatePoints(parseInt(levelNumber.value), initailPoint)
-
     drawLine(
       initailPoint,
       {
@@ -72,7 +63,6 @@
   )
 
   bfsBtn.addEventListener('click', () => {
-    //console.log('Trazando a lo ancho')
     resetVariables()
 
     drawLine(
@@ -100,7 +90,6 @@
       //Filtrar los nodos que estan en el nivel actual:
       nodesAtCurrentLevel = pointsArray.filter(node => node.level === currentLevel)
       //Si no hay nodos en el nivel actual es porque ya se sobrepasaron todos los niveles del arbol:
-      //console.log(nodesAtCurrentLevel)
       if (nodesAtCurrentLevel.length === 0) {
         console.log("Stoped at level " + currentLevel)
         counter.value = parseInt(counter.value) - 1//Esto no beberia ser asi.
@@ -174,7 +163,6 @@
   }
 
   function drawLine(point1, point2) {
-    //console.log(`Dibujando linea con radio = ${c} y largo = ${currentLarge}`)
     planeContext.lineWidth = point2.r
     planeContext.beginPath();
     planeContext.moveTo(point1.x, point1.y)
