@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title> Fractal Tree </title>
+</head>
+
+<body>
+    <h2> Fractal Tree </h2>
+    <div class="row">
+        <canvas id="plane" width="500" height="500" style="border:1px solid red; background-color: black;"></canvas>
+        <div id="right-panel">
+            <div>
+                <h5>Número de niveles:</h5>
+                <input id="level-number" type="number" min="2" , max="10" value="2">
+            </div>
+            <div>
+                <h5>Número de actual de ramas: </h5>
+                <input type="text" id="counter" value="1" disabled>
+            </div>
+            <button id="dfs-btn">
+                Trazar en Profundidad
+            </button>
+            <br>
+            <button id="bfs-btn">
+                Trazar a lo ancho
+            </button>
+            <br>
+            <h5> Seleccione el color: </h5>
+            <select id="color-choocer" name="select">
+                <option value="verde" selected> Verde </option>
+                <option value="rojo"> Rojo </option>
+                <option value="azul"> Azul </option>
+                <option value="purpura"> Purpura </option>
+            </select>
+        </div>
+    </div>
+    <script src="treeDrafter.js"></script>
+</body>
+
+</html>
