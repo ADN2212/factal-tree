@@ -28,6 +28,7 @@
   planeContext.lineWidth = currentRadius
 
   dfsBtn.addEventListener('click', () => {
+    disableAndEnableButtons()
     resetVariables()
     drawLine(
       initailPoint,
@@ -56,6 +57,7 @@
         }
       } else {
         clearInterval(intId)
+        disableAndEnableButtons()
       }
       i += 1
     }, 100)
@@ -63,8 +65,8 @@
   )
 
   bfsBtn.addEventListener('click', () => {
+    disableAndEnableButtons()
     resetVariables()
-
     drawLine(
       initailPoint,
       {
@@ -94,6 +96,7 @@
         console.log("Stoped at level " + currentLevel)
         counter.value = parseInt(counter.value) - 1//Esto no beberia ser asi.
         clearInterval(intId)
+        disableAndEnableButtons()
         return
       }
       //De lo contrario trazamos todas las ramas que salen del nivel actual:
@@ -204,6 +207,11 @@
     //Borrar lo dibujado antes de empezar a dibujar otra vez.
     planeContext.clearRect(0, 0, plane.width, plane.height)
     counter.value = 1
+  }
+
+  function disableAndEnableButtons(){
+    dfsBtn.disabled = !dfsBtn.disabled
+    bfsBtn.disabled = !bfsBtn.disabled
   }
 
 })()
